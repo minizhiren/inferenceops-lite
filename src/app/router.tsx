@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from 'react-router-dom'
+import { Routes, Route, Navigate,useInRouterContext  } from 'react-router-dom'
 import LoginPage from '../features/auth/LoginPage'
 import RequireAuth from '../features/auth/RequireAuth'
 import Tasks from '../pages/Tasks'
@@ -8,6 +8,7 @@ import AppLayout from './AppLayout'
 import AdminNodes from '../pages/AdminNodes'
 
 export default function Router() {
+   console.log('Router: inRouterContext?', useInRouterContext())
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
