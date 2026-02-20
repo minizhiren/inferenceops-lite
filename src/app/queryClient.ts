@@ -9,7 +9,7 @@ function toMessage(err: unknown) {
 
 export const queryClient = new QueryClient({
   queryCache: new QueryCache({
-    onError: (error, query) => {
+    onError: (error) => {
       // 可选：避免把 aborted 当成错误弹出来
       const msg = toMessage(error)
       if (msg.toLowerCase().includes('aborted')) return

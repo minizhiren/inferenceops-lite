@@ -1,5 +1,5 @@
-import { useMutation, useQuery, useQueryClient, useInfiniteQuery } from '@tanstack/react-query'
-import type { CreateTaskInput, TasksQuery, TaskLogsResponse } from './types'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import type { CreateTaskInput, TasksQuery } from './types'
 import { fetchTasks, createTask, cancelTask, fetchTask, fetchTaskLogs } from './api'
 
 export function useTasksQuery(q: TasksQuery) {

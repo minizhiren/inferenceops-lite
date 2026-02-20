@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useMemo, useState } from 'react'
+import React, { createContext, useMemo, useState } from 'react'
 import type { AuthSession, Role } from './auth.types'
 import { clearSession, loadSession, saveSession } from './auth.storage'
 

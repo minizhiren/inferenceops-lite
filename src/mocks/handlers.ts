@@ -136,7 +136,7 @@ export const handlers = [
     return HttpResponse.json({ task: t })
   }),
 
-  http.get('/api/tasks/:id/logs', async ({ request, params }) => {
+  http.get('/api/tasks/:id/logs', async ({ params }) => {
     await delay(500)
 
     const { id } = params as { id: string }
