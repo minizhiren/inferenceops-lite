@@ -12,17 +12,13 @@ export default function Router() {
     <Routes>
       <Route path="/login" element={<LoginPage />} />
 
+      {/* 一次性保护 AppLayout + 所有子路由 */}
       <Route element={<RequireAuth><AppLayout /></RequireAuth>}>
+        <Route path="/tasks" element={<Tasks />} />
+        <Route path="/submit" element={<SubmitTask />} />
+        <Route path="/tasks/:id" element={<TaskDetail />} />
 
-        <Route
-          path="/tasks"
-          element={
-            <RequireAuth>
-              <Tasks />
-            </RequireAuth>
-          }
-        />
-
+        {/* 仅 admin 需要额外 role 守卫 */}
         <Route
           path="/admin/nodes"
           element={
@@ -31,27 +27,10 @@ export default function Router() {
             </RequireAuth>
           }
         />
-
-        <Route
-          path="/submit"
-          element={
-            <RequireAuth>
-              <SubmitTask />
-            </RequireAuth>
-          }
-        />
-
-        <Route
-          path="/tasks/:id"
-          element={
-            <RequireAuth>
-              <TaskDetail />
-            </RequireAuth>
-          }
-        />
-
       </Route>
-      <Route path="*" element={<Navigate to="/tasks" />} />
+
+      {/* 默认入口建议直达 /tasks（受保护，会被守卫处理） */}
+      <Route path="*" element={<Navigate to="/tasks" replace />} />
     </Routes>
   )
 }
