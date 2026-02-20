@@ -5,10 +5,7 @@ import Tasks from '../pages/Tasks'
 import SubmitTask from '../pages/SubmitTask'
 import TaskDetail from '../pages/TaskDetail'
 import AppLayout from './AppLayout'
-
-function AdminNodes() {
-  return <h1>Admin / Nodes</h1>
-}
+import AdminNodes from '../pages/AdminNodes'
 
 export default function Router() {
   return (
