@@ -70,7 +70,7 @@ export default function AppLayout() {
             </div>
 
             {/* page body */}
-            <div style={{ width: '100%', padding: '16px 24px' }}>
+            <div style={{ width: '100%', padding: '0px' }}>
                 <Outlet />
             </div>
         </div>
